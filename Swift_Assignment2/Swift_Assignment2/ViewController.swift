@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         // Delegateを設定
-        // 追加した行
+        // 修正: セルの識別子を"Cell"に統一
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         loadTasks()
@@ -73,8 +73,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // 2. 各行のセルを構成するメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // "cell"という識別子で再利用可能なセルを取得する
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        // 修正: セルの識別子を"Cell"に統一
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         // 表示するタスクを取得する
         let task = tasks[indexPath.row]
